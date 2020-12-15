@@ -2,11 +2,22 @@
 echo "Welcome to Flip coin Simulation"
 
 
-flip=$((RANDOM%2))
+count=1
+HEADS=0
+TAILS=0
+max=10
+while [[ $count -le $max ]]
+do
+   flip=$((RANDOM%2))
 
- if [ $flip -eq 1 ]
+   if [ $flip -eq 1 ]
    then
-      echo "HEADS"
+      (( HEADS++ ))
    else
-      echo "TAILS"
+      (( TAILS++ ))
    fi
+   ((count++))
+done
+echo "FLIPCOUNT-"$count
+echo "HEADS-"$HEADS
+echo "TAILS-"$TAILS
